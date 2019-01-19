@@ -6,7 +6,6 @@ var config = {
 config.prefs = {
   'font-size': 13,
   'font': 'sans-serif',
-  'width': 600,
   'line-height': 28.8,
   'new-tab': true,
   'reader-mode': false,

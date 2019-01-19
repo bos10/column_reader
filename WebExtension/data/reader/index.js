@@ -190,10 +190,6 @@ chrome.runtime.sendMessage({
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     margin: 30px auto 0 auto;
-    float: left;
-    width: 50%;
-    height: 100%;
-    overflow: scroll;
   }
   body[data-mode="light"] {
     color: #222222;
@@ -242,7 +238,30 @@ chrome.runtime.sendMessage({
   #reader-credits:empty {
     disply: none;
   }
-
+  #left {
+      float: left;
+      width: 48%;
+      height: 100%;
+      overflow: scroll;
+  }
+  #right {
+      float: right;
+      width: 48%;
+      height: 100%;
+      overflow: scroll;
+  }
+  .speech {
+    position: relative;
+  }
+  .speech::after {
+    content: '';
+    position: absolute;
+    left: -100vw;
+    top: -5px;
+    width: 300vw;
+    height: calc(100% + 10px);
+    box-shadow: 0 0 0 1000vw rgba(128,128,128,0.2);
+  }
   </style>
 </head>
 <body>
@@ -251,7 +270,12 @@ chrome.runtime.sendMessage({
   <div dir="auto" id="reader-credits">${article.byline || ''}</div>
   <div dir="auto" id="reader-estimated-time">${article.readingTimeMinsFast}-${article.readingTimeMinsSlow} minutes</div>
   <hr/>
-  ${article.content}
+  <div id="left">
+    ${article.content}
+  </div>
+  <div id="right">
+    ${article.content}
+  </div>
 </body>
 </html>`;
   iframe.contentDocument.write(html);
