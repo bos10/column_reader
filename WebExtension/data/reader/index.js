@@ -311,7 +311,7 @@ document.addEventListener('click', e => {
   }
   else if (cmd === 'full-width') {
     chrome.storage.local.set({
-      width: e.target.parentElement.querySelector('input').checked ? 600 : 0
+      width: 0
     });
   }
   else if (cmd === 'line-height-type-1' || cmd === 'line-height-type-2') {
