@@ -1,0 +1,46 @@
+{
+  "name": "Your Mother",
+  "short_name": "your-mother",
+  "description": "strips your mother",
+  "author": "Joker boy",
+  "version": "0.2.6",
+  "manifest_version": 2,
+  "permissions": [
+    "storage",
+    "tabs",
+    "contextMenus",
+    "*://*/*",
+    "chrome://favicon/",
+    "notifications"
+  ],
+  "background": {
+    "persist": false,
+    "scripts": [
+      "config.js",
+      "common.js"
+    ]
+  },
+  "page_action": {
+    "default_icon": {
+      "16": "data/icons/16.png",
+      "32": "data/icons/32.png",
+      "64": "data/icons/64.png"
+    }
+  },
+  "homepage_url": "http://add0n.com/chrome-reader-view.html",
+  "icons": {
+    "16": "data/icons/16.png",
+    "32": "data/icons/32.png",
+    "48": "data/icons/48.png",
+    "128": "data/icons/128.png"
+  },
+  "web_accessible_resources": [
+    "data/reader/*"
+  ],
+  "incognito": "split",
+  "commands": {
+    "toggle-reader-view": {
+      "description": "Toggle the your mother"
+    }
+  }
+}

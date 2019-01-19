@@ -1,2 +1,0 @@
-# alternative_source
-hacknroll
