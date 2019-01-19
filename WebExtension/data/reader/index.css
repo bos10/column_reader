@@ -147,11 +147,9 @@ body[data-mode=dark] #toolbar>span {
   padding: 2px 10px;
 }
 #toolbar [data-cmd="width-increase"]::before {
-  content: '\e806|\e807';
   display: inline;
 }
 #toolbar [data-cmd="width-decrease"]::before {
-  content: '\e807|\e806';
   display: inline;
 }
 
