@@ -63,5 +63,5 @@
 .icon-next:before { content: '\e80d'; } /* '' */
 .icon-previous:before { content: '\e80e'; } /* '' */
 .icon-fullscreen:before { content: '\e80f'; } /* '' */
-.icon-font:before { content: '\f088'; } /* '' */
+.icon-font:before { content: ':::'; } /* '' */
 
