@@ -10,21 +10,6 @@ var settings = document.querySelector('#toolbar>div');
 
 const shortcuts = [];
 
-/* printing */
-{
-  const span = document.createElement('span');
-  span.title = 'Print in the Reader View (Meta + P)';
-  span.classList.add('icon-print');
-  if (localStorage.getItem('printing-button') === 'false') {
-    span.style.display = 'none';
-  }
-  span.onclick = () => iframe.contentWindow.print();
-  shortcuts.push({
-    condition: e => e.code === 'KeyP' && e.metaKey,
-    action: span.onclick
-  });
-  document.getElementById('toolbar').appendChild(span);
-}
 /* save as HTML*/
 {
   const span = document.createElement('span');
