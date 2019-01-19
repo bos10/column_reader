@@ -208,8 +208,8 @@ chrome.runtime.sendMessage({
   }
   #reader-domain {
     font-size: 0.9em;
-    line-height: 1.48em;
-    padding-bottom: 4px;
+    line-height: 1.0em;
+    padding-bottom: 2px;
     font-family: Helvetica, Arial, sans-serif;
     text-decoration: none;
     border-bottom-color: currentcolor;
@@ -219,20 +219,20 @@ chrome.runtime.sendMessage({
     font-size: 1.6em;
     line-height: 1.25em;
     width: 100%;
-    margin: 20px 0;
+    margin: 5px 0;
     padding: 0;
   }
   #reader-credits {
     font-size: 0.9em;
     line-height: 1.48em;
-    margin: 0 0 10px 0;
+    margin: 0 0 5px 0;
     padding: 0;
     font-style: italic;
   }
   #reader-estimated-time {
     font-size: 0.85em;
     line-height: 1.48em;
-    margin: 0 0 10px 0;
+    margin: 0 0 5px 0;
     padding: 0;
   }
   #reader-credits:empty {
@@ -241,8 +241,8 @@ chrome.runtime.sendMessage({
   #left {
       column-count: 3;
       float: left;
-      width: 90%;
-      height: 70vh;
+      width: 100%;
+      height: 80vh;
       overflow: scroll;
   }
 
