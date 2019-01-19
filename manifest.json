@@ -1,0 +1,24 @@
+{
+	// Version Details
+	"name": "Alternative Source",
+	"version": "1.0",
+	"manifest_version": 2,
+
+	// Description
+	"description": "Tool to generate Alternative Sources for fact-checking",
+	"icons": {
+		"128": "<insert icon image filename>"
+	},
+
+
+	// Type of Extension : Browser
+	"browser_action": {
+		"default_title": "Use Alternative Source Finder",
+		"default_popup": "<Insert popup image>"
+	},
+
+	// Intent of app, what will be accessed for the user
+	"permissions": [
+		"http://*/*", "https://*/*"
+	]
+}
