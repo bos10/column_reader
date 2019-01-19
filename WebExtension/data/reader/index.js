@@ -10,34 +10,6 @@ var settings = document.querySelector('#toolbar>div');
 
 const shortcuts = [];
 
-/* save as HTML*/
-{
-  const span = document.createElement('span');
-  span.title = 'Save in HTML format (Meta + S)';
-  span.classList.add('icon-save');
-  if (localStorage.getItem('save-button') === 'false') {
-    span.style.display = 'none';
-  }
-  span.onclick = () => {
-    const content = iframe.contentDocument.documentElement.outerHTML;
-    const blob = new Blob([content], {
-      type: 'text/html'
-    });
-    const objectURL = URL.createObjectURL(blob);
-    const link = Object.assign(document.createElement('a'), {
-      href: objectURL,
-      type: 'text/html',
-      download: article.title.replace( /[<>:"/\\|?*]+/g, '' ) + '.html'
-    });
-    link.dispatchEvent(new MouseEvent('click'));
-    setTimeout(() => URL.revokeObjectURL(objectURL));
-  };
-  shortcuts.push({
-    condition: e => e.code === 'KeyS' && e.metaKey && !e.shiftKey,
-    action: span.onclick
-  });
-  document.getElementById('toolbar').appendChild(span);
-}
 /* fullscreen */
 {
   const span = document.createElement('span');
