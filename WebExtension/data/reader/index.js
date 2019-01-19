@@ -239,29 +239,13 @@ chrome.runtime.sendMessage({
     disply: none;
   }
   #left {
+      column-count: 3;
       float: left;
-      width: 48%;
-      height: 100%;
+      width: 90%;
+      height: 70vh;
       overflow: scroll;
   }
-  #right {
-      float: right;
-      width: 48%;
-      height: 100%;
-      overflow: scroll;
-  }
-  .speech {
-    position: relative;
-  }
-  .speech::after {
-    content: '';
-    position: absolute;
-    left: -100vw;
-    top: -5px;
-    width: 300vw;
-    height: calc(100% + 10px);
-    box-shadow: 0 0 0 1000vw rgba(128,128,128,0.2);
-  }
+
   </style>
 </head>
 <body>
@@ -271,9 +255,6 @@ chrome.runtime.sendMessage({
   <div dir="auto" id="reader-estimated-time">${article.readingTimeMinsFast}-${article.readingTimeMinsSlow} minutes</div>
   <hr/>
   <div id="left">
-    ${article.content}
-  </div>
-  <div id="right">
     ${article.content}
   </div>
 </body>
