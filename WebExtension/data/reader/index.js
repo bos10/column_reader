@@ -236,6 +236,10 @@ chrome.runtime.sendMessage({
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     margin: 30px auto 0 auto;
+    float: left;
+    width: 50%;
+    height: 100%;
+    overflow: scroll;
   }
   body[data-mode="light"] {
     color: #222222;
