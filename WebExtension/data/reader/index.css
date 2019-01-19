@@ -13,6 +13,7 @@ body {
   flex-direction: row;
   font-family: "Helvetica Neue",Helvetica,sans-serif;
   font-size: 13px;
+
 }
 input {
   font-family: "fontello";
@@ -22,6 +23,7 @@ input {
 iframe {
   flex: 1;
   border: none;
+
 }
 
 #toolbar {
