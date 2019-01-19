@@ -181,13 +181,14 @@ chrome.runtime.sendMessage({
     width: 100%;
     height: 80vh;
     overflow: scroll;
+    text-align: justify;
+    text-justify: inter-word;
   }
 
   </style>
 </head>
 <body>
-  <a id="reader-domain" href="${article.url}">${(new URL(article.url)).hostname}</a>
-  <h1 dir="auto" id="reader-title">${article.title || 'Unknown Title'}</h1>
+  <h1 dir="auto" id="reader-title"> <a id="reader-domain" href="${article.url}"> ${article.title || 'Unknown Title'} </a> </h1>
   <div dir="auto" id="reader-credits">${article.byline || ''}</div>
   <div dir="auto" id="reader-estimated-time">${article.readingTimeMinsFast}-${article.readingTimeMinsSlow} minutes</div>
   <hr/>
@@ -316,7 +317,7 @@ document.addEventListener('click', e => {
   }
   else if (cmd === 'line-height-type-1' || cmd === 'line-height-type-2') {
     chrome.storage.local.set({
-      'line-height': cmd === 'line-height-type-1' ? 28.8 : 32
+      'line-height': cmd === 'line-height-type-1' ? 20.8 : 24.8
     });
   }
   else if (cmd === 'no-height') {
