@@ -288,12 +288,25 @@ document.addEventListener('click', e => {
     });
   }
   else if (cmd === 'width-decrease' || cmd === 'width-increase') {
-    console.log("columnCount A "+iframe.contentDocument.getElementById("left").style.columnCount);
+    if(iframe.contentDocument.getElementById("left").style.columnCount === "") {
+      iframe.contentDocument.getElementById("left").style.columnCount = "3";
+      console.log("tweaked");
+    }
+    var currColCount = parseInt(iframe.contentDocument.getElementById("left").style.columnCount);
+
+    console.log("currColCount "+currColCount);
+
     if (cmd == 'width-decrease') {
-        iframe.contentDocument.getElementById("left").style.columnCount = "4";
+
+      console.log("dec");
+      currColCount++;
+      iframe.contentDocument.getElementById("left").style.columnCount = currColCount.toString();
     }
     else {
-        iframe.contentDocument.getElementById("left").style.columnCount = "2";
+
+      console.log("inc");
+      currColCount--;
+      iframe.contentDocument.getElementById("left").style.columnCount = currColCount.toString();
     }
   }
   else if (cmd === 'full-width') {
