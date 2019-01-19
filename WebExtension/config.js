@@ -13,6 +13,7 @@ config.prefs = {
   'version': null,
   'user-css': '', // is used for exporting from old method; do not delete
   'last-update': 0,
+  'width': 0
 };
 
 chrome.storage.onChanged.addListener(prefs => {
