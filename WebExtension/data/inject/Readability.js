@@ -566,6 +566,8 @@ Readability.prototype = {
     this._clean(articleContent, "aside");
 
     // try
+    this._clean(articleContent, "img");
+    this._clean(articleContent, "picture");
     this._clean(articleContent, "span");
 
 
