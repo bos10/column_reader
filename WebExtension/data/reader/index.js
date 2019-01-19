@@ -94,69 +94,6 @@ var update = {
 
 chrome.storage.onChanged.addListener(update.async);
 
-document.addEventListener('click', e => {
-  const target = e.target.closest('[data-cmd]');
-  if (!target) {
-    return;
-  }
-  const cmd = target.dataset.cmd;
-  if (cmd.startsWith('font-type-')) {
-    chrome.storage.local.set({
-      'font': cmd.replace('font-type-', '')
-    });
-  }
-  else if (cmd === 'font-decrease' || cmd === 'font-increase') {
-    const size = config.prefs['font-size'];
-    chrome.storage.local.set({
-      'font-size': cmd === 'font-decrease' ? Math.max(9, size - 1) : Math.min(33, size + 1)
-    });
-  }
-  else if (cmd === 'width-decrease' || cmd === 'width-increase') {
-    const width = config.prefs.width;
-    if (width) {
-      chrome.storage.local.set({
-        width: cmd === 'width-decrease' ? Math.max(300, width - 50) : Math.min(1000, width + 50)
-      });
-    }
-    else {
-      chrome.storage.local.set({
-        width: 600
-      });
-    }
-  }
-  else if (cmd === 'full-width') {
-    chrome.storage.local.set({
-      width: e.target.parentElement.querySelector('input').checked ? 600 : 0
-    });
-  }
-  else if (cmd === 'line-height-type-1' || cmd === 'line-height-type-2') {
-    chrome.storage.local.set({
-      'line-height': cmd === 'line-height-type-1' ? 28.8 : 32
-    });
-  }
-  else if (cmd === 'no-height') {
-    chrome.storage.local.set({
-      'line-height': e.target.parentElement.querySelector('input').checked ? 28.8 : 0
-    });
-  }
-  else if (cmd.startsWith('color-mode-')) {
-    localStorage.setItem('mode', cmd.replace('color-mode-', ''));
-    update.sync();
-  }
-  else if (cmd === 'close') {
-    // do this until the script is unloaded
-    window.setTimeout(() => {
-      e.target.dispatchEvent(new Event('click', {
-        bubbles: true
-      }));
-    }, 200);
-    history.go(-1);
-  }
-  else if (cmd === 'close-speech') {
-    document.body.dataset.speech = false;
-  }
-});
-
 chrome.runtime.onMessage.addListener(request => {
   if (request.cmd === 'close') {
     history.go(isFirefox ? -2 : -1);
@@ -239,11 +176,11 @@ chrome.runtime.sendMessage({
     disply: none;
   }
   #left {
-      column-count: 3;
-      float: left;
-      width: 100%;
-      height: 80vh;
-      overflow: scroll;
+    column-count: 3;
+    float: left;
+    width: 100%;
+    height: 80vh;
+    overflow: scroll;
   }
 
   </style>
@@ -332,3 +269,62 @@ chrome.runtime.sendMessage({
   }
   config.load(update.async);
 });
+
+document.addEventListener('click', e => {
+  const target = e.target.closest('[data-cmd]');
+  if (!target) {
+    return;
+  }
+  const cmd = target.dataset.cmd;
+  if (cmd.startsWith('font-type-')) {
+    chrome.storage.local.set({
+      'font': cmd.replace('font-type-', '')
+    });
+  }
+  else if (cmd === 'font-decrease' || cmd === 'font-increase') {
+    const size = config.prefs['font-size'];
+    chrome.storage.local.set({
+      'font-size': cmd === 'font-decrease' ? Math.max(9, size - 1) : Math.min(33, size + 1)
+    });
+  }
+  else if (cmd === 'width-decrease' || cmd === 'width-increase') {
+    console.log("columnCount A "+iframe.contentDocument.getElementById("left").style.columnCount);
+    if (cmd == 'width-decrease') {
+        iframe.contentDocument.getElementById("left").style.columnCount = "4";
+    }
+    else {
+        iframe.contentDocument.getElementById("left").style.columnCount = "2";
+    }
+  }
+  else if (cmd === 'full-width') {
+    chrome.storage.local.set({
+      width: e.target.parentElement.querySelector('input').checked ? 600 : 0
+    });
+  }
+  else if (cmd === 'line-height-type-1' || cmd === 'line-height-type-2') {
+    chrome.storage.local.set({
+      'line-height': cmd === 'line-height-type-1' ? 28.8 : 32
+    });
+  }
+  else if (cmd === 'no-height') {
+    chrome.storage.local.set({
+      'line-height': e.target.parentElement.querySelector('input').checked ? 28.8 : 0
+    });
+  }
+  else if (cmd.startsWith('color-mode-')) {
+    localStorage.setItem('mode', cmd.replace('color-mode-', ''));
+    update.sync();
+  }
+  else if (cmd === 'close') {
+    // do this until the script is unloaded
+    window.setTimeout(() => {
+      e.target.dispatchEvent(new Event('click', {
+        bubbles: true
+      }));
+    }, 200);
+    history.go(-1);
+  }
+  else if (cmd === 'close-speech') {
+    document.body.dataset.speech = false;
+  }
+}); 
