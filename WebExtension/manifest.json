@@ -1,9 +1,9 @@
 {
-  "name": "Your Mother",
-  "short_name": "your-mother",
-  "description": "strips your mother",
-  "author": "Joker boy",
-  "version": "0.2.6",
+  "name": "Column View Mode",
+  "short_name": "CV Mode",
+  "description": "Enable Column View",
+  "author": "Loco",
+  "version": "1.0",
   "manifest_version": 2,
   "permissions": [
     "storage",
@@ -27,7 +27,7 @@
       "64": "data/icons/64.png"
     }
   },
-  "homepage_url": "http://add0n.com/chrome-reader-view.html",
+  "homepage_url": "http://www.google.com",  // Change for default page opening 
   "icons": {
     "16": "data/icons/16.png",
     "32": "data/icons/32.png",
@@ -40,7 +40,7 @@
   "incognito": "split",
   "commands": {
     "toggle-reader-view": {
-      "description": "Toggle the your mother"
+      "description": "Toggle Column View Mode"
     }
   }
 }

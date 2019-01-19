@@ -17,9 +17,9 @@ function update(tab) {
   chrome.pageAction.setIcon({
     tabId: tab.id,
     path: {
-      16: 'data/icons' + (reader ? '/orange' : '') + '/16.png',
-      32: 'data/icons' + (reader ? '/orange' : '') + '/32.png',
-      64: 'data/icons' + (reader ? '/orange' : '') + '/64.png'
+      16: 'data/icons' + (reader ? '/green' : '') + '/16.png',
+      32: 'data/icons' + (reader ? '/green' : '') + '/32.png',
+      64: 'data/icons' + (reader ? '/green' : '') + '/64.png'
     }
   });
 }
