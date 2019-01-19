@@ -38,24 +38,6 @@ const shortcuts = [];
   });
   document.getElementById('toolbar').appendChild(span);
 }
-/* speech */
-{
-  const span = document.createElement('span');
-  span.title = 'Read this Article (Beta) (Meta + Shift + S)';
-  span.classList.add('icon-speech');
-  if (localStorage.getItem('speech-button') === 'false') {
-    span.style.display = 'none';
-  }
-  span.onclick = () => {
-    document.body.dataset.speech = true;
-    document.querySelector('#speech [data-cmd]').click();
-  };
-  shortcuts.push({
-    condition: e => e.code === 'KeyS' && e.metaKey && e.shiftKey,
-    action: span.onclick
-  });
-  document.getElementById('toolbar').appendChild(span);
-}
 
 var styles = {
   top: document.createElement('style'),
@@ -260,18 +242,7 @@ chrome.runtime.sendMessage({
   #reader-credits:empty {
     disply: none;
   }
-  .speech {
-    position: relative;
-  }
-  .speech::after {
-    content: '';
-    position: absolute;
-    left: -100vw;
-    top: -5px;
-    width: 300vw;
-    height: calc(100% + 10px);
-    box-shadow: 0 0 0 1000vw rgba(128,128,128,0.2);
-  }
+
   </style>
 </head>
 <body>

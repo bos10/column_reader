@@ -51,7 +51,6 @@
 }
 
 .icon-close:before { content: '\e800'; } /* '' */
-.icon-speech:before { content: '\e803'; } /* '' */
 .icon-article-collapsed:before { content: '\e804'; } /* '' */
 .icon-article-expanded:before { content: '\e805'; } /* '' */
 .icon-left:before { content: '\e806'; } /* '' */
