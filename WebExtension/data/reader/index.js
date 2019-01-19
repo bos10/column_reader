@@ -64,7 +64,7 @@ function getFont(font) {
 
 var update = {
   sync: () => {
-    const mode = localStorage.getItem('mode') || 'sepia';
+    const mode = localStorage.getItem('mode') || 'dark';
     document.body.dataset.mode = iframe.contentDocument.body.dataset.mode = mode;
   },
   async: () => {
@@ -136,10 +136,6 @@ chrome.runtime.sendMessage({
     color: #eeeeee;
     background-color: #333333;
   }
-  body[data-mode="sepia"] {
-    color: #5b4636;
-    background-color: #f4ecd8;
-  }
   body[data-loaded=true] {
     transition: color 0.4s, background-color 0.4s;
   }
@@ -179,7 +175,7 @@ chrome.runtime.sendMessage({
     column-count: 3;
     float: left;
     width: 100%;
-    height: 80vh;
+    height: 86vh;
     overflow: scroll;
     text-align: justify;
     text-justify: inter-word;
