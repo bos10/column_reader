@@ -1,7 +1,7 @@
-## Column View Mode
+## Column Reader
 ![128](https://user-images.githubusercontent.com/30528763/51434295-79779e80-1c98-11e9-805f-a154d4b5846a.png)
 
-Column View Mode transforms your viewing experience with a simply click of a button.
+Column Reader transforms your viewing experience with a simply click of a button.
 * Easy Multiple Screen Viewing
 * Horizontal Scrolling
 * Declutter your webpage (No Ads, No Irrelevant sidebars)
