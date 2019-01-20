@@ -9,6 +9,10 @@ Column View Mode transforms your viewing experience with a simply click of a but
 * Night and Day mode
 * Reversible Instantly
 
+## Preview
+![preview1](https://user-images.githubusercontent.com/30528763/51434352-a8dadb00-1c99-11e9-9ffe-27a8dde95d0c.JPG)
+
+
 ## Examples
 ### Declutter and Sleek Presentation
 ![example1](https://user-images.githubusercontent.com/30528763/51434138-1a645a80-1c95-11e9-8713-478a35bfb09b.JPG)
